@@ -13,7 +13,7 @@ import ManualLayout
 
 public extension UIViewController {
 
-  public func presentToast(_ toast: TVOSToast) {
+    func presentToast(_ toast: TVOSToast) {
     toast.presentOnView(self.view)
   }
 }
@@ -22,20 +22,20 @@ public extension UIViewController {
 
 public extension NSAttributedString {
 
-  public convenience init(text: String, fontName: String, fontSize: CGFloat, color: UIColor) {
+    convenience init(text: String, fontName: String, fontSize: CGFloat, color: UIColor) {
     let font = UIFont(name: fontName, size: fontSize) ?? UIFont.systemFont(ofSize: fontSize)
     self.init(text: text, font: font, color: color)
   }
 
-  public convenience init(text: String, font: UIFont, color: UIColor) {
+    convenience init(text: String, font: UIFont, color: UIColor) {
     let attributes = [
-      NSFontAttributeName: font,
-      NSForegroundColorAttributeName: color
+        NSAttributedString.Key.font: font,
+        NSAttributedString.Key.foregroundColor: color
     ]
     self.init(string: text, attributes: attributes)
   }
 
-  public convenience init(imageName: String, bounds: CGRect?, bundle: Bundle) {
+    convenience init(imageName: String, bounds: CGRect?, bundle: Bundle) {
     let textAttachment = NSTextAttachment()
     textAttachment.image = UIImage(named: imageName, in: bundle, compatibleWith: nil)
     if let bounds = bounds {
@@ -44,7 +44,7 @@ public extension NSAttributedString {
     self.init(attachment: textAttachment)
   }
 
-  public convenience init(attributedStrings: NSAttributedString...) {
+    convenience init(attributedStrings: NSAttributedString...) {
     let mutableAttributedString = NSMutableAttributedString()
     for attributedString in attributedStrings {
       mutableAttributedString.append(attributedString)
@@ -212,7 +212,7 @@ open class TVOSToast: UIView {
     let duration = style.duration ?? 3
     let backgroundColor = style.backgroundColor ?? UIColor.gray
     let cornerRadius = style.cornerRadius ?? 10
-    let font = style.font ?? UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
+    let font = style.font ?? UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
     let textColor = style.textColor ?? UIColor.white
 
     // setup style
