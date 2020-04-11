@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TVOSToast"
-  s.version      = "1.0"
+  s.version      = "1.1"
   s.summary      = "Toast component for tvOS with built-in siri remote hint support"
 
   # This description is used to generate tags and improve search results.
@@ -53,7 +53,8 @@ Toast component for tvOS with built-in siri remote hint support.
   #  profile URL.
   #
 
-  s.author             = { "cemolcay" => "ccemolcay@gmail.com" }
+  s.author             = { "cemolcay" => "ccemolcay@gmail.com",
+                          "bsorrentino" => "bartolomeo.sorrentino@gmail.com" }
   # Or just: s.author    = "cemolcay"
   # s.authors            = { "cemolcay" => "ccemolcay@gmail.com" }
   # s.social_media_url   = "http://twitter.com/cemolcay"
@@ -65,7 +66,7 @@ Toast component for tvOS with built-in siri remote hint support.
   #
 
   # s.platform     = :ios
-  s.platform     = :tvos, "12.4"
+  s.platform     = :tvos, "12"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
